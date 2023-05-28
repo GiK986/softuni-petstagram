@@ -1,4 +1,5 @@
 {% extends 'base/base.html' %}
+{% load static %}
 {% block content %}
     <div class="container">
         <div class="col-9">
@@ -7,7 +8,7 @@
             <form class="searchbar" method="post">
                 <input type="text" placeholder="Search by pet name...">
                 <button>
-                    <img src="/static/images/search.png" height="18" alt="img2">
+                    <img src="{% static 'images/search.png' %}" height="18" alt="img2">
                 </button>
             </form>
             <!-- End Searchbar Form -->

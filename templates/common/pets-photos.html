@@ -1,3 +1,4 @@
+{% load static %}
 <!-- Start Second Pet Photo Post -->
 <div class="card">
     <div class="top">
@@ -7,7 +8,7 @@
                 <div class="profilepic">
                     <div class="profile_img">
                         <div class="image">
-                            <img src="/static/images/person.png" alt="img8">
+                            <img src="{% static 'images/person.png' %}" alt="img8">
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,7 @@
     </div>
     <!-- Post image -->
     <div class="imgBx" id="place the id of the photo here">
-        <img src="/static/images//dog-on-bed.jpg" alt="post" class="cover">
+        <img src="{% static 'images//dog-on-bed.jpg' %}" alt="post" class="cover">
     </div>
     <!-- -->
 
