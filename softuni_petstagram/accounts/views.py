@@ -14,7 +14,7 @@ def logout_user(request):
     return None
 
 
-def profile_details(request):
+def profile_details(request, pk):
     return render(request, 'accounts/profile-details-page.html')
 
 
