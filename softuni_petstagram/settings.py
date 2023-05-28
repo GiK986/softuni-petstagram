@@ -37,6 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    # Project apps
+    "softuni_petstagram.accounts",
+    "softuni_petstagram.common",
+    "softuni_petstagram.pets",
+    "softuni_petstagram.photos",
+
 ]
 
 MIDDLEWARE = [
