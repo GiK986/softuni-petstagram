@@ -120,7 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+softuni_petstagram/.env
 .venv
 env/
 venv/
