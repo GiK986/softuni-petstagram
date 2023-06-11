@@ -41,8 +41,9 @@
         <div class="actionBtns">
             <div class="left">
                 <span class="heart">
-                    <a href="#">
+                    <a href="{% url 'like' photo.pk %}">
                         <!-- if user has liked the photo -->
+                        {% if photo.like_set.all %}
                         <svg style="color: red"
                              xmlns="http://www.w3.org/2000/svg"
                              width="24"
@@ -59,6 +60,7 @@
                             </path>
                         </svg>
                         <!-- else -->
+                        {% else %}
                         <svg aria-label="Like"
                              color="#262626"
                              fill="#262626"
@@ -66,6 +68,7 @@
                              role="img"
                              viewBox="0 0 48 48"
                              width="24">
+                         {% endif %}
                         <!-- Coordinate path -->
                         <path d="M34.6 6.1c5.7 0 10.4 5.2 10.4
                                     11.5 0 6.8-5.9 11-11.5 16S25 41.3 24
@@ -100,7 +103,7 @@
         <!-- -->
 
         <a href="#">
-            <p class="likes">152 likes</p>
+            <p class="likes">{{ photo.like_set.count }} likes</p>
         </a>
 
         <!-- tagged pets -->
