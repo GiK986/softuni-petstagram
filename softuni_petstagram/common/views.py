@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, resolve_url
 from pyperclip import copy
 
-from softuni_petstagram.common.forms import CommentForm
+from softuni_petstagram.common.forms import CommentForm, SearchForm
 from softuni_petstagram.common.models import Like
 from softuni_petstagram.photos.models import Photo
 
@@ -10,10 +10,18 @@ from softuni_petstagram.photos.models import Photo
 def index(request):
     all_photos = Photo.objects.all()
     comment_form = CommentForm()
+    search_form = SearchForm()
+
+    if request.method == 'POST':
+        search_form = SearchForm(request.POST)
+        if search_form.is_valid() and search_form.cleaned_data['pet_name']:
+            pet_name = search_form.cleaned_data['pet_name']
+            all_photos = all_photos.filter(tagged_pets__name__icontains=pet_name)
 
     context = {
         'all_photos': all_photos,
         'comment_form': comment_form,
+        'search_form': search_form,
     }
 
     return render(request, 'common/home-page.html', context=context)
